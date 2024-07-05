@@ -9,4 +9,10 @@ router.get('/:id', usuarioController.getUsuarioById);
 router.put('/:id', usuarioController.updateUsuario);
 router.delete('/:id', usuarioController.deleteUsuario);
 
+// Rutas adicionales para registro de usuario y gestión de roles
+router.post('/register', usuarioController.registerUser);
+router.post('/login', usuarioController.login);
+router.get('/roles', usuarioController.getRoles);
+router.post('/roles', usuarioController.createRole);
+
 module.exports = router;

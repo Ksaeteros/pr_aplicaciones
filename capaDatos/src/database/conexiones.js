@@ -3,7 +3,7 @@ require('dotenv').config();
 const { Sequelize } = require('sequelize');
 
 const dbConfig = {
-  database: process.env.DB_NAME || 'CRIALED',
+  database: process.env.DB_NAME || 'NEO',
   username: process.env.DB_USER || 'postgres',
   password: process.env.DB_PASSWORD || '123',
   host: process.env.DB_HOST || 'localhost',
