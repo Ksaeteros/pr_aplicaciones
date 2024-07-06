@@ -89,6 +89,7 @@ exports.login = async (req, res) => {
 
     console.log(`Usuario encontrado: ${usuario.nombre}`);
     console.log(`Contraseña almacenada (hash): ${usuario.contrasena}`);
+    console.log(`Rol del usuario: ${usuario.Rol.nombre_rol}`);
 
     const passwordMatch = await bcrypt.compare(contrasena, usuario.contrasena);
     if (!passwordMatch) {
@@ -99,7 +100,7 @@ exports.login = async (req, res) => {
     console.log(`Inicio de sesión exitoso para ${usuario.nombre}`);
 
     // Generar token JWT (ajusta la configuración según tus necesidades)
-    const token = jwt.sign({ id_usuario: usuario.id_usuario }, 'tu_secreto_jwt', { expiresIn: '1h' }); 
+    const token = jwt.sign({ id_usuario: usuario.id_usuario, role: usuario.Rol.nombre_rol}, 'tu_secreto_jwt', { expiresIn: '1h' }); 
     res.json({ token }); 
   } catch (error) {
     console.error(`Error en el proceso de inicio de sesión: ${error.message}`);

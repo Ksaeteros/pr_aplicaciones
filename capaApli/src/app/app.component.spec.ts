@@ -1,10 +1,11 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { AppModule } from './app.module';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AppComponent],
+      imports: [AppModule], // Cambiado de imports a declarations
     }).compileComponents();
   });
 
@@ -27,3 +28,4 @@ describe('AppComponent', () => {
     expect(compiled.querySelector('h1')?.textContent).toContain('Hello, capaApli');
   });
 });
+
