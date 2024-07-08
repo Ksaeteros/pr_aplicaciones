@@ -14,6 +14,7 @@ const tareaRoutes = require('./tareaRoutes');
 const usuarioRoutes = require('./usuarioRoutes');
 const authRoutes = require('./authRoutes');
 
+
 router.use('/areas', areaRoutes);
 router.use('/asignaciones', asignacionRoutes);
 router.use('/contratos', contratoRoutes);

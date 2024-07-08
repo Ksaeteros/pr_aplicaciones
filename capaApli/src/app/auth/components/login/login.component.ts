@@ -26,7 +26,7 @@ export class LoginComponent {
           this.router.navigate(['/admin/dashboard']);
         } else if (decodedToken.role === 'Gerente General') {
           this.router.navigate(['/gerente/dashboard']);
-        } else if (decodedToken.role === 'Encargado de Área') {
+        } else if (decodedToken.role === 'Encargado de Ãrea') {
           this.router.navigate(['/encargado/dashboard']);
         }
       },

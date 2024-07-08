@@ -16,6 +16,11 @@ import { DashboardComponent as AdminDashboardComponent } from './pages/admin/das
 import { DashboardComponent as GerenteDashboardComponent } from './pages/gerente/dashboard/dashboard.component';
 import { DashboardComponent as EncargadoDashboardComponent } from './pages/encargado/dashboard/dashboard.component';
 
+// Importa las nuevas funcionalidades
+import { UserRegistrationComponent } from './pages/admin/user-registration/user-registration.component';
+import { RoleManagementComponent } from './pages/admin/role-management/role-management.component';
+import { CommonModule } from '@angular/common';
+
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   {
@@ -48,9 +53,12 @@ const routes: Routes = [
     EncargadoLayoutComponent,
     AdminDashboardComponent,
     GerenteDashboardComponent,
-    EncargadoDashboardComponent
+    EncargadoDashboardComponent,
+    UserRegistrationComponent,
+    RoleManagementComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     FormsModule,
     RouterModule.forRoot(routes)

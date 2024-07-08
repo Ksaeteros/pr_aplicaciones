@@ -14,5 +14,6 @@ router.post('/register', usuarioController.registerUser);
 router.post('/login', usuarioController.login);
 router.get('/roles', usuarioController.getRoles);
 router.post('/roles', usuarioController.createRole);
+router.post('/assign-role', usuarioController.assignRole);
 
 module.exports = router;

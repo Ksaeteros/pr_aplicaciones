@@ -10,13 +10,21 @@ import { DashboardComponent as AdminDashboardComponent } from './pages/admin/das
 import { DashboardComponent as GerenteDashboardComponent } from './pages/gerente/dashboard/dashboard.component';
 import { DashboardComponent as EncargadoDashboardComponent } from './pages/encargado/dashboard/dashboard.component';
 
+// Importa las nuevas funcionalidades
+import { UserRegistrationComponent } from './pages/admin/user-registration/user-registration.component';
+import { RoleManagementComponent } from './pages/admin/role-management/role-management.component';
+
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
   {
     path: 'admin',
     component: AdminLayoutComponent,
     canActivate: [AuthGuard],
-    children: [{ path: 'dashboard', component: AdminDashboardComponent }]
+    children: [
+      { path: 'dashboard', component: AdminDashboardComponent },
+      { path: 'user-registration', component: UserRegistrationComponent },
+      { path: 'role-management', component: RoleManagementComponent }
+    ]
   },
   {
     path: 'gerente',

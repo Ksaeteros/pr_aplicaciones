@@ -135,6 +135,7 @@ exports.getRoles = async (req, res) => {
   }
 };
 
+
 // Crear rol
 exports.createRole = async (req, res) => {
   try {
@@ -143,5 +144,22 @@ exports.createRole = async (req, res) => {
     res.status(201).json(nuevoRol);
   } catch (error) {
     res.status(500).json({ message: error.message });
+  }
+};
+
+
+// Método para asignar un rol a un usuario
+exports.assignRole = async (req, res) => {
+  try {
+    const { id_usuario, id_rol } = req.body;
+    const usuario = await Usuario.findByPk(id_usuario);
+    if (!usuario) {
+      return res.status(404).json({ message: 'Usuario no encontrado' });
+    }
+    usuario.id_rol = id_rol;
+    await usuario.save();
+    res.status(200).json({ message: 'Rol asignado correctamente' });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
   }
 };

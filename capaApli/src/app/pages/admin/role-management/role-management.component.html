@@ -1,0 +1,17 @@
+<div>
+    <h2>Gestión de Roles</h2>
+    <form (submit)="assignRole()">
+      <label for="usuario">Seleccionar Usuario:</label>
+      <select [(ngModel)]="id_usuario" name="usuario">
+        <option *ngFor="let usuario of usuarios" [value]="usuario.id_usuario">{{ usuario.nombre }}</option>
+      </select>
+      
+      <label for="rol">Seleccionar Rol:</label>
+      <select [(ngModel)]="id_rol" name="rol">
+        <option *ngFor="let rol of roles" [value]="rol.id_rol">{{ rol.nombre_rol }}</option>
+      </select>
+      
+      <button type="submit">Asignar Rol</button>
+    </form>
+  </div>
+  

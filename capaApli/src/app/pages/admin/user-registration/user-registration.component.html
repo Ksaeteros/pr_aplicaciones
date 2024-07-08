@@ -1,0 +1,23 @@
+<div>
+    <h2>Registro de Usuarios</h2>
+    <form (ngSubmit)="register()">
+      <label for="nombre">Nombre:</label>
+      <input type="text" [(ngModel)]="nombre" name="nombre" required>
+  
+      <label for="correo_electronico">Correo Electrónico:</label>
+      <input type="email" [(ngModel)]="correo_electronico" name="correo_electronico" required>
+  
+      <label for="contrasena">Contraseña:</label>
+      <input type="password" [(ngModel)]="contrasena" name="contrasena" required>
+  
+      <label for="id_rol">Rol:</label>
+      <select [(ngModel)]="id_rol" name="id_rol" required>
+        <option [value]="1">Administrador</option>
+        <option [value]="2">Gerente General</option>
+        <option [value]="3">Encargado de Área</option>
+      </select>
+  
+      <button type="submit">Registrar Usuario</button>
+    </form>
+  </div>
+  
